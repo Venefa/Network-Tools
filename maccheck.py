@@ -22,7 +22,7 @@ def format_mac_address(mac_address):
     return mac_address
 
 def search_mac_address(mac_address, ip_address):
-    df = pd.read_csv('/Users/flo/Downloads/oui.csv')
+    df = pd.read_csv('oui.csv')
     filtered_df = df[df['Assignment'].str.startswith(mac_address[:6].upper())]
     if not filtered_df.empty:
         print("MAC-Adresse gefunden:")
